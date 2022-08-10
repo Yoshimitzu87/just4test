@@ -1,0 +1,15 @@
+const puppeteer = require('puppeteer');
+
+const URL_TEST = 'https://yoshimitzu87.github.io/just4test/';
+
+async function testForTest() {
+    console.log('Запуск браузера');
+    const browser = await puppeteer.launch({headless: false, slowMo: 100});
+
+    console.log('Создание новой вкладки в браузере');
+    const page = await browser.newPage();
+
+    console.log('Переход по ссылке');
+    await page.goto(URL_TEST);
+}
+testForTest();
